@@ -16,6 +16,7 @@ body {
   font-size: 1rem;
   line-height: 1.5;
   color: white;
+  font-family: 'Poppins', sans-serif;
 }
 
 h1,
@@ -25,6 +26,7 @@ h4,
 h5,
 h6 {
   font-weight: bold;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 a {
@@ -45,6 +47,7 @@ img {
   display: block;
   width: 100%;
   height: auto;
+  max-height: 700px;
 }
 
 ul,
@@ -57,6 +60,8 @@ ol {
 .flex {
   display: flex;
   gap: var(--gap, 1rem);
+  flex-direction: column;
+  text-align: center;
 }
 
 .grid {
@@ -83,10 +88,15 @@ ol {
   place-items: center;
   justify-content: space-between;
 }
-
+.nav-links {
+  display: none;
+}
 /* Hero Section */
 .hero-container {
   gap: 2rem;
+}
+.hero-container > * {
+  flex-basis: 50%;
 }
 .hero-content {
   flex-direction: column;
@@ -107,6 +117,7 @@ ol {
   background-color: rgb(20, 20, 222);
   border-radius: 0.3rem;
   cursor: pointer;
+  margin: 0 auto;
 }
 .hero-button:hover {
   background-color: rgb(70, 70, 234);
@@ -134,11 +145,18 @@ ol {
 /* Courses */
 .courses-container {
   gap: 2rem;
+  color: black;
+}
+.courses-container > * {
+  flex-basis: 50%;
 }
 .courses-content {
-  color: black;
   flex-direction: column;
   justify-content: center;
+  order: 1;
+}
+.courses-img {
+  order: 2;
 }
 .courses-title {
   font-size: 1.8rem;
@@ -153,7 +171,60 @@ ol {
   border-radius: 0.3rem;
   color: white;
   cursor: pointer;
+  margin: 0 auto;
 }
 .courses-button:hover {
   background-color: rgb(70, 70, 234);
+}
+/* Contact */
+.contact-container {
+  color: black;
+  gap: 2rem;
+}
+.contact-container > * {
+  flex-basis: 50%;
+}
+.contact-table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  border-width: 0.2rem;
+}
+.table-title {
+  font-size: 1.3rem;
+  padding: 0.5rem 0;
+}
+.location-iframe {
+  border-radius: 0.5rem;
+}
+/* Footer */
+#footer {
+  background-color: rgb(56, 55, 55);
+}
+.footer-container {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* Media Queries */
+@media (min-width: 993px) {
+  .nav-container,
+  .nav-list,
+  .hero-container,
+  .form-container,
+  .courses-container,
+  .contact-container,
+  .table-container {
+    flex-direction: row;
+  }
+  .nav-links {
+    display: block;
+  }
+  .flex {
+    text-align: start;
+  }
+  .hero-button,
+  .courses-button {
+    margin: 0;
+  }
 }
